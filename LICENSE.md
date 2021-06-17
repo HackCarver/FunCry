@@ -17,10 +17,10 @@ be updated as needed for the purpose of FunCry.
 
 "FunCry" is a modification for the 2004 FarCry video game.
 
-If you agree to:
-  A: include a copy of this license with each copy you distribute
-  B: not indicate that your version is the original or official variant
-  C: not modify FunCry to be malicious or harmful
+If you agree to:<br>
+  A: include a copy of this license with each copy you distribute<br>
+  B: not indicate that your version is the original or official variant<br>
+  C: not modify FunCry to be malicious or harmful<br>
   D: not remove or alter attributions or credits (except for adding new credit for additions)
 
 Then you may: freely use, modify and redistribute "FunCry" at your own
