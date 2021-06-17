@@ -17,5 +17,5 @@ C: Maybe the \*license as well? This thing is built on top of the CryENGINE 1.4 
 \*The other way would be to cut out all the external stuff, and distribute ONLY the original stuff. Basically have some laundry list of softwares to hunt down and install. Then the changes to the SDK files could be automatically added via some little text merging tool. Same result, less messy with mixing all this third party crap into it on the GitHub side of it. More messy for the developer tho
 
 # Features
-A real-time audio modification hook
-A load-time chartacter modification hook
+A real-time audio modification hook<br>
+A load-time chartacter modification hook<br>
