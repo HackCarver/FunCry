@@ -1,0 +1,5 @@
+_Description_ = "$1   A randomizer mod for FarCry 1\n        Jun 02 2021 build"
+_Website_ = "$6 www.moddb.com/mods/funcry"
+_Version_ = "Evaluation Build 5"
+_Author_ = "FarOut"
+_Title_ = "$1FunCry"

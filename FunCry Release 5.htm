@@ -1,0 +1,430 @@
+﻿<!-- 
+-- FunCry
+-- 
+-- FunCry is licensed under the FunCry license
+-->
+<!doctype html>
+<html>
+  <head>
+    <title>FunCry Release 5</title>
+    <style>
+      @media all {
+        * {
+          cursor : default;
+          resize : none;
+          margin : 0;
+          outline : none;
+          border : none;
+          box-sizing : border-box;
+          padding : 0;
+          vertical-align : top;
+          text-decoration : none;
+          text-align : left;
+          font-family : Tw Cen MT Bold, Tw Cen MT Condensed, monospace;
+          color : #000000;
+          background-color : transparent;
+        }
+        u {
+          text-decoration : underline;
+        }
+      }
+      @media screen {
+        html,
+          body {
+          height : 100%;
+          max-height : 100%;
+          min-height : 100%;
+        }
+        body {
+          display : flex;
+          flex-flow : column;
+        }
+        body > div:first-of-type {
+          padding : 2px 8px;
+          text-align : center;
+          border-bottom : 1px dotted hsla( 0 , 0% , 0% , 0.23921568627450981 );
+          background-color : #98acb7;
+        }
+        body > div:first-of-type > a {
+          cursor : pointer;
+          display : inline-block;
+          border : 1px solid #424344;
+          border-radius : 16px;
+          padding : 2px 12px 1px 12px;
+          font-size : 20px;
+          font-weight : bold;
+          color : #0000ffa6;
+        }
+        body > div:first-of-type > a:hover {
+          color : #d01e1ead;
+        }
+        body > div:last-of-type {
+          flex : 1;
+          overflow : auto;
+          background-color : #828b92;
+        }
+        body > div:last-of-type a {
+          cursor : pointer;
+          color : #0000ffa6;
+        }
+        body > div:last-of-type > div:not( last-of-type ) {
+          border-bottom : 1px dotted #ffc0c066;
+          padding : 2px 6px;
+        }
+        body > div:last-of-type > div:not( last-of-type ),
+          body > div:last-of-type > div:not( last-of-type ) * {
+          font-size : 20px;
+        }
+        div.title {
+          padding-left : 20px;
+          font-weight : bold;
+          font-size: 30px!important;
+          color : #4b5320;
+        }
+        div.file {
+          padding-left : 10px;
+          font-weight : bold;
+          font-size: 20px!important;
+          color : #4b5320;
+        }
+        p {
+          text-indent: 15px;
+          color : #c2e77aa6;
+        }
+        #sneaky {
+          opacity : 0;
+        }
+        #sneaky:hover {
+          opacity : 1;
+        }
+      }
+    </style>
+    <script>
+      window.addEventListener( 'DOMContentLoaded' , function( ){
+          'use strict';
+          /* outbound links open in new window and won't leak referrer */
+          Array.prototype.forEach.call( document.querySelectorAll( 'a' ) , function( lank ){
+              if( /^[^#]*$/.test( lank.href.toString( ) ) ){
+                lank.target = '_blank';
+                lank.rel = 'noreferrer';
+              }
+            }
+          );
+        }
+      );
+    </script>
+  </head>
+  <body>
+    <div><a href='#contents'>Index</a></div>
+    <div>
+      <div id='contents'>
+        <div class='title'>Index</div>
+        <a href='#overview'>Overview</a><br/>
+        <a href='#install'>Installation</a><br/>
+        <a href='#effect'>Effects</a><br/>
+        <a href='#config'>Config</a><br/>
+        <a href='#issues'>Known issues</a><br/>
+        <a href='#changes'>Change Log</a><br/>
+        <a href='#credit'>Credits etc</a><br/>
+      </div>
+      <div id='overview'>
+        <div class='title'>Overview</div>
+        • FunCry is a randomizer mod for FarCry 2004. (requires patch 1.4)<br/>
+        • <a href='https://www.moddb.com/mods/funcry'>FunCry on ModDB</a><br/>
+        • <a href='https://discord.gg/gGbhV3ZBxH'>FunCry on Discord</a><br/>
+        Bug reports? Coding genius and want to help? Contact FarOut or work on the issue directly in the open sourced build.<br/>
+      </div>
+      <div id='install'>
+        <div class='title'>Installation</div>
+        • Open your Far Cry folder. The location will vary, depending on what version you have<br/>
+        • Open the "Far Cry/Mods" folder. If needed, create the "Mods" folder<br/>
+        • Now copy the "FunCry" folder to the "Mods" folder..<br/>
+        <br/>
+        ^^ FunCry is now installed<br/>
+        <br/>
+        • To start the FunCry mod, you can start FarCry ... and then select it from the <b>mods</b> list. The game will then restart and you'll be playing FunCry<br/>
+        • Alternatively, you can make a shortcut to FarCry.exe. Then you'd open the properties and append " -mod:FunCry" to the target properties<br/>
+        <br/>
+        <div style='text-align : center'>
+          <img src='data:image/png;base64,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'/>
+        </div>
+        <br/>
+      </div>
+      <div id='effect'>
+        <div class='title'>Effects</div>
+        There's over 5000 random sounds that can be played. One is played when a new effect is started<br/>
+        Also there's a chance of getting a random skybox applied to each level. This feature can not be disabled<br/>
+        There's some basic effects for video cutscenes<br/>
+        Birds can be "hunted" now<br/>
+        Sound randomization capability can be disabled in general. (via config file)<br/>
+        Character and object randomization capability can be disabled in general. (via config file)<br/>
+        Conversation randomizer can be disabled via config file. These are randomized with other mercenary conversations<br/>
+        Radio messages are randomized when the "Conversation randomizer". They are randomized with other radio messages.<br/>
+        Languages (sounds from FCData\Localized) randomizer can be disabled via config file. This is a context free sound randomizer that is most active if the "Conversation randomizer" is disabled. Sounds from FCData\Localized are randomized with each other<br/>
+        Cutscene randomizer can be disabled via config file<br/>
+        Character randomizer can be disabled via config file<br/>
+        Carried/used weapon randomizer can be disabled via config file<br/>
+        Dropped weapon setting can be customized via config file<br/>
+        <br/>
+        <br/>
+        <div class='file'>Shady business</div>
+        • A very dark effect unless you are by the ocean<br/>
+        <br/>
+        <div class='file'><b>[not implemented]</b> Life is colorful</div>
+        • Changes some environment colors<br/>
+        • Note: Had crash issues. Might return once the actual issue is found<br/>
+        <br/>
+        <div class='file'>Zoom zoom</div>
+        • Random Field of View change<br/>
+        <br/>
+        <div class='file'>On the move...</div>
+        • Teleportation to pre-defined locations, or sometimes fully random. May or may not be permanent<br/>
+        <br/>
+        <div class='file'>What Hud?</div>
+        • Removes the HUD. You didn't really need it, did you?<br/>
+        <br/>
+        <div class='file'><b>[not implemented]</b> Is it really real?</div>
+        • An absurd camera effect that breaks the game's rendering. Disabled because it causes serious flickering issues on some levels<br/>
+        <br/>
+        <div class='file'>Where you going?</div>
+        • Turns you around<br/>
+        <br/>
+        <div class='file'>Laggy cuteness</div>
+        • Awww, so cute. How could you shoot them?<br/>
+        <br/>
+        <div class='file'>Floaters</div>
+        • Disables animation<br/>
+        <br/>
+        <div class='file'>Mercs n boxes</div>
+        • Mercs are now in boxes where they belong<br/>
+        <br/>
+        <div class='file'>Ghosts with guns</div>
+        • Think you can fight ghosts? Guess we'll find out<br/>
+        <br/>
+        <div class='file'>Lag over 9000</div>
+        • Annoying<br/>
+        <br/>
+        <div class='file'>Wires and stuff</div>
+        • Interesting visual effect<br/>
+        <br/>
+        <div class='file'>Hurry up Jack!</div>
+        • Why is everything so slow?<br/>
+        • Note: This effect will not be enabled if you are in a vehicle<br/>
+        <br/>
+        <div class='file'>Why so fast?</div>
+        • Why is everything so fast?<br/>
+        <br/>
+        <div class='file'>Full health!</div>
+        • Full health. Applied once<br/>
+        <br/>
+        <div class='file'>Full armor!</div>
+        • Full armor. Applied once<br/>
+        <br/>
+        <div class='file'>Full stamina</div>
+        • Full stamina. Applied once<br/>
+        <br/>
+        <div class='file'>Random health and armor</div>
+        • Random health and armor. Applied once<br/>
+        <br/>
+        <div class='file'>Last 20 rounds</div>
+        • Looks like you're down to your last 20 rounds of ammo now. Ooops<br/>
+        <br/>
+        <div class='file'>Full ammo!</div>
+        • Seems your weapon just got 300 rounds of ammo. Enjoy!<br/>
+        <br/>
+        <div class='file'><b>[not implemented]</b> Remove all weapons</div>
+        • Would remove all your weapons. Perhaps this is not a good idea<br/>
+        <br/>
+        <div class='file'>Screensaver</div>
+        • A simple screensaver effect<br/>
+        <br/>
+        <div class='file'>Negativity</div>
+        • Now that's a bit different. Test it with Cryvision as well<br/>
+        <br/>
+        <div class='file'>Black Ops</div>
+        • Jack's special forces training kicks in for a while. Infinite stamina, body detection crosshair, etc<br/>
+        <br/>
+        <div class='file'>Frozen!</div>
+        • Enemy AI is frozen in place<br/>
+        <br/>
+        <div class='file'>Faded Hud</div>
+        • Hud is faded<br/>
+        <br/>
+        <div class='file'>Size matters</div>
+        • Certain objects will be scaled if you aim at them<br/>
+        <br/>
+        <div class='file'>Who needs widescreen?</div>
+        • Disables the widescreen scaling<br/>
+        <br/>
+        <div class='file'>Alternative Hud</div>
+        • Another way to look at the Hud<br/>
+        <br/>
+        <div class='file'>Funky Hud</div>
+        • As described<br/>
+        <br/>
+        <div class='file'>Funky Weapon</div>
+        • Jack's forgotten all that special forces training and handles his gun like a damn civilian<br/>
+        <br/>
+        <div class='file'>Healthy life</div>
+        • Probably caused by eating cheerios every morning, but Jack finds himself very healthy all of a sudden. Timed effect<br/>
+        <br/>
+        <!--div class='file'><b>[not implemented]</b> Custom</div>
+        • <br/>
+        <br/-->
+        <div class='file'>Ghost town</div>
+        • Certain structures have disappeared<br/>
+        <br/>
+        <div class='file'>Jitter</div>
+        • As described<br/>
+        <br/>
+        <div class='file'>Boxes</div>
+        • Things are in boxes<br/>
+        <br/>
+        <div class='file'>Blurry terrain</div>
+        • Terrain looks so amazing :D<br/>
+        <br/>
+        <div class='file'>What terrain?</div>
+        • Terrain is missing<br/>
+        <br/>
+        <div class='file'>Matrix</div>
+        • You'll know it when you see it<br/>
+        <br/>
+        <div class='file'>Tomato</div>
+        • Delicious huh?<br/>
+        <br/>
+        <div class='file'>Agent Orange</div>
+        • Foliage is missing. Pretty strange<br/>
+        <br/>
+        <div class='file'>Big jump</div>
+        • Low gravity<br/>
+        <br/>
+        <div class='file'>Hangover</div>
+        • Drunk effect<br/>
+        <br/>
+        <div class='file'>Speedy crouch</div>
+        • Movement when crouched is fast now<br/>
+        <br/>
+        <div class='file'>Speedy prone</div>
+        • Movement when proned is fast now<br/>
+        <br/>
+        <div class='file'>In the matrix</div>
+        • Multiple levels of reality are merging<br/>
+        <br/>
+        <div class='file'>Futuristic</div>
+        • A pulsing and colorful HUD, along with a futuristic weapon effect. For now, anyway<br/>
+        <br/>
+        <div class='file'>Nothing</div>
+        • A lazy effect that does nothing<br/>
+        <br/>
+        <div class='file'>Remove armor</div>
+        • Removes all armor. One time effect<br/>
+        <br/>
+        <div class='file'>Out of breath</div>
+        • Jack has no stamina. Timed effect<br/>
+        <br/>
+        <div class='file'>Infinite armor</div>
+        • Infinite amounts of armor. Timed effect<br/>
+        <br/>
+        <div class='file'>Is that you, Val?</div>
+        • Mercenaries sound like Valerie now. Does not apply to their conversations, and is mainly seen in combat<br/>
+        <br/>
+        <div class='file'>Pulse</div>
+        • The HUD pulses. Groovy, huh?<br/>
+        <br/>
+        <!--div class='file'><b>[not implemented]</b> Guns have feelings</div>
+        • This effect changes all weapon sounds to a specific pain sound<br/>
+        • not implemented right now due to weapon sounds (apparently) being cached during level load rather than loaded as needed<br/-->
+        <br/>
+      </div>
+      <div id='config'>
+        <div class='title'>Config</div>
+        You can change some things in the FunCry/Config.cfg file<br/>
+        • Time before another "rare" effect can be started<br/>
+        • Amount of effects active<br/>
+        • Amount of effects that are in the pending list<br/>
+        • Amount of pending effects that will be shown<br/>
+        • An alternative view<br/>
+        • Disable entire mod UI<br/>
+        • Disable individual effects [in case some are annoying, unwanted, or buggy]<br/>
+        <br/>
+        And perhaps more. Just check the config file. Don't set the number of pending effects too high, or the game will lag a lot [and the log.txt file will say an effect could not be found]<br/>
+      </div>
+      <div id='issues'>
+        <div class='title'>Issues</div>
+        • Certain combinations of effects can cause a visual glitch with the Hud. This does get reset eventually<br/>
+        • There may be a delay till you can fire a weapon after the fast motion effect<br/>
+        • Using the "Size matters" effect, you can scale certain items to a size that prevents you from progressing further. Such as the forklift in Factory level. Or doors on the Bunker level<br/>
+      </div>
+      <div id='changes'>
+        <div class='title'>Change Log</div>
+        Jun 02 2021 Changes in fifth release<br/>
+        • "On the move..." effect now can restore the player to a previous position <u>with a vehicle</u><br/>
+        • Turns out the "In the matrix" effect is uniquely bugged. Perhaps it only ever worked correctly for me. Oops<br/>
+        • Support for new categories of randomization. Characters can now be randomized, as well as weapons<br/>
+        • Weapons that the enemies carry and use can be randomized. This is done via config file<br/>
+        • Enemies can be forced to drop the weapon they would normally have... regardless of what they were using. This ability allows the player's weapons to be the normal ones while the enemies are doing some serious cheating. This is done via config file<br/>
+        • Cutscenes can be randomized. Kindof. However there is only one very small effect in this release<br/>
+        • New effect: "Is that you, Val?" .. This is an audio mod that changes mercenary voices to be that of Valerie<br/>
+        • This is the audio mod update. By far, the most time was spent on that. New internal structures, context sensitive replacement, etc. Many iterations of such things, as well as background projects that support this goal. Things like collecting basic attributes of each sound. That alone took quite some time and a custom Windows program. Long term, these investments in secondary work should enable richer and better quality audio mods.<br/>
+        • The config file has more options now, mainly releated to the new audio, character, and cutscene capabilites<br/>
+        • "In the matrix" effect is still enabled by default. It works for some, and looks terrible for others. Not enough feedback to know if it is generally ok, or generally buggy.<br/>
+        • "Can't run" effect has been renamed to "Out of breath"<br/>
+        • New effect: "Pulse"<br/>
+        • It has been a while since a FunCry build was released, so this one could have more issues than normal. Please report them if so<br/>
+        • Build 5 is the first public release of source code<br/>
+        <br/>
+        Feb 06 2021 Changes in fourth release<br/>
+        • New effect: "In the matrix" .. This should be a high quality effect that produces some visual illusions<br/>
+        • "Black Ops" effect updated<br/>
+        • Screensaver effect updated. Now allows Hud to be shown. Does not apply to the "Black Ops" aim indicator, however<br/>
+        • "Wires and stuff" now enabled by default again [should be fine as long as the other "Wires and stuff" and "Digital jungle" effects are disabled]<br/>
+        • Removed some unused and problematic effects, including: "Wires and stuff v2", "Digital jungle", and "Digital jungle v2"<br/>
+        • "Full stamina" effect is now more likely<br/>
+        • New effect: "Futuristic"<br/>
+        • Fixed the drunk camera effect and toned it down a bit<br/>
+        • New effect: "Nothing"<br/>
+        • Hurry up Jack! effect is now shorter<br/>
+        • Added ability to disable mod UI from config file<br/>
+        • Updated the config file a bit<br/>
+        • New effect: "Remove armor"<br/>
+        • New effect: "Can't run"<br/>
+        • New effect: "Infinite armor"<br/>
+        • This version passed the standard stability test of being able to complete the game without issues<br/>
+        <br/>
+        Jan 17 2021 Changes in third release<br/>
+        • Video effects now more likely<br/>
+        • Workaround for the bug where the entire hud (except radar) disappeared till another Hud effect would reset it<br/>
+        • "Funky Hud" is no longer randomized when loading a new level, or pausing the game<br/>
+        • "Screensaver" effect no longer frozen after being paused for a level load<br/>
+        • "Zoom zoom" has a bigger range of possible FOV, and is updated<br/>
+        • New effect: "Hangover"<br/>
+        • "Laggy cuteness" now has more possible sizes<br/>
+        • New effect: "Speedy crouch"<br/>
+        • New effect: "Speedy prone"<br/>
+        • Added mod description and thumbnail. That means FunCry is now a "real mod" :D<br/>
+        • Fixed some issues with the ReadMe document such as wrong year, spelling mistakes, etc.<br/>
+        <br/>
+        Jan 9 2021 Changes in second release<br/>
+        • "Black Ops" effect now works in vehicles. At least in FPV.<br/>
+        • "Negativity" effect now works correctly, but covers the weapon as well.<br/>
+        • Added config file support.<br/>
+        • Disabled some effects that were determined to cause issues.<br/>
+        • Added some new effects.<br/>
+        • "Lag over 9000" effect now restores previous FPS limit after it is finished.<br/>
+        • And many misc changes<br/>
+      </div>
+      <div id='credit'>
+        <div class='title'>Credits etc</div>  
+        • Coded by FarOut.<br/>
+        • General idea somewhat inspired by various randomizer mods for GTA.<br/>
+        • The "FunCry" name, as well as some effect and design ideas are courtesy of FarCry speedrunners Kolega and MakkerDon.<br/>
+        • Thanks to Arn Carveris.<br/>
+        • Thanks to jon for c++ advice and a basic code review.<br/>
+        • Thanks to early beta testers including IDL, MakkerDon, and Kolega<br/>
+        • Thanks to all who showed interest, suggested ideas, etc. Those ideas have been noted and may appear in future versions. Sorry if anyone was skipped<br/>
+        • Slow motion referenced from example posted by Adrenaline. Drunk camera effect suggested by F4Qs. Screensaver math formula adapted from some (I've forgotten where) public code. Fast walking/crouching while other speeds remain the same suggested by MakkerDon.<br/>
+        • Uses FarOut Widescreen for some Hud effects as well as basic widescreen support. Because it's not<!-- fucking --> 2004 anymore :)<br/>
+      </div>
+    </div>
+  </body>
+</html>
