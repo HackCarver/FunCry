@@ -10,7 +10,12 @@ You'll need Visual Studio 2003 or the alternative Code::Blocks setup. The instru
 https://discord.gg/nVdPPkf
 
 # Issues
-A: There's a range of issues with this mod, mainly regarding the HUD.
-B: Maybe the \*license as well? This thing is built on top of the CryENGINE 1.4 MOD SDK, which has it's own (included) license. Sure, the core of the mod is safe as it is entirely original and only uses the API. Cool, but then some is also embedded in the SDK (typically marked tho).
+A: There's a range of issues with this mod, mainly regarding the HUD
+B: Inconsistencies. Code quality varies a lot, and so does the styling
+C: Maybe the \*license as well? This thing is built on top of the CryENGINE 1.4 MOD SDK, which has it's own (included) license. Sure, the core of the mod is safe as it is entirely original and only uses the API. Cool, but then some is also embedded in the SDK (typically marked tho)
 
-\*The other way would be to cut out all the external stuff, and distribute ONLY the original stuff. Basically have some laundry list of softwares to hunt down and install. Then the changes to the SDK files could be automatically added via some little text merging tool. Same result, less messy with mixing all this third party crap into it on the GitHub side of it
+\*The other way would be to cut out all the external stuff, and distribute ONLY the original stuff. Basically have some laundry list of softwares to hunt down and install. Then the changes to the SDK files could be automatically added via some little text merging tool. Same result, less messy with mixing all this third party crap into it on the GitHub side of it. More messy for the developer tho
+
+# Features
+A real-time audio modification hook
+A load-time chartacter modification hook
