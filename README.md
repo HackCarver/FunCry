@@ -1,6 +1,6 @@
 
 # FunCry
-A randomizer for FarCry 2004 (CryEngine 1)
+A randomizer for FarCry 2004 v1.4 (CryEngine 1)
 
 # Building
 You need the BINK SDK (not uploaded here because of licensing issues). Alternatively, open ProjectDefines.h and un-comment the lines that say "#define NOT_USE_BINK_SDK" to remove the BINK dependency. However you lose the ability to play some cutscenes as well as the demo loop
