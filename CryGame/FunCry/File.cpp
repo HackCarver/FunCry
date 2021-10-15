@@ -40,7 +40,7 @@ string FunCry::ReadCfg( string Target ){
         key = STrim( RLine.substr( 0 , delimiter ) );
         value = STrim( RLine.substr( delimiter + 1 ) );
         if( key == Target ){
-          return string( value );
+          return string( value ); /// that's a memory leak
         }
       }
 
